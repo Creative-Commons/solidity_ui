@@ -2,6 +2,7 @@ pragma solidity >=0.4.22 <0.9.0;
 pragma experimental ABIEncoderV2;
 
 contract Policy {
+
 	uint public count = 0; // state variable
 
 	struct User {
@@ -21,7 +22,8 @@ contract Policy {
 		users[count] = User(count, _name, _phone);
 	}
 
-function getUser() public returns (uint) {
-	return count;
-}
+	function getUser() public returns (uint) {
+		return count;
+	}
+	
 }
