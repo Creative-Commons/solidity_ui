@@ -1,22 +1,28 @@
-#### Solidity Smart Contracts with UI
-
-1. Go to Remix IDE
-2. Switch on ganache and connect it by selecting Web3 Provider on deploy
-3. Compile Sol files and deploy
-4. Copy ABI json -> list and ContractAddress -> 0x...hash 
-    and paste it in `js/config.js`
-5. Create relevant UI
-6. Import Web3 JS min from CDN
-7. Call methods on contract using the following sequence
+## Solidity Smart Contracts with UI
 
 ---
 
+#### Steps
+
+##### 1. Visit the Remix IDE for Solidity Smart Contract development and deployment at https://remix.ethereum.org/
+##### 2. Download Ganache from https://trufflesuite.com/ganache/index.html
+##### 3. Start up Ganache and select a Workspace.
+##### 4. Add a new Smart Contract in the Remix editor and deploy it to a Web3 provider on the same localhost URL (http://localhost:7545) for the Ganache RPC Server.
+##### 5. Copy Contract ABI : JSON & Contract Address -> 0x... (hash) and paste it in `js/config.js` within the project structure
+##### 6. Create relevant UI (here vanilla HTML, JS. View repo)
+##### 7. Import Web3 JS min from CDN (link in index.html)
+##### 8. Call methods on contract using the following sequence (Refer to flow in `js/` directory)
+
+> 8.1
+
 ```javascript
 web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
-// getAccount() will get the first account from  ganache and will set it as defaultAccount for our contract operations ////
+
+// getAccount() will get the first account from  ganache and 
+// will set it as defaultAccount for our contract operations 
+
 async function getAccount() {
     let accounts = await web3.eth.getAccounts();
-    console.log(accounts);
     web3.eth.defaultAccount = accounts[0];
     console.log(web3.eth.defaultAccount + ' account detected');
     return web3.eth.defaultAccount;
@@ -24,7 +30,7 @@ async function getAccount() {
 
 ```
 
----
+> 8.2
 
 ```javascript
     // Write functions in a similar fashion
@@ -32,4 +38,4 @@ async function getAccount() {
     let count = await contract.methods.getUser().call({ from: web3.eth.defaultAccount });
 ```
 
-8. Manipulate DOM on stateUpdates.
+9. Manipulate DOM on stateUpdates. (Refer `js/app.js`)
