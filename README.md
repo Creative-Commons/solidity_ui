@@ -10,7 +10,25 @@
 ##### 4. Add a new Smart Contract in the Remix editor and deploy it to a Web3 provider on the same localhost URL (http://localhost:7545) for the Ganache RPC Server.
 ##### 5. Copy Contract ABI : JSON & Contract Address -> 0x... (hash) and paste it in `js/config.js` within the project structure
 ##### 6. Create relevant UI (here vanilla HTML, JS. View repo)
-##### 7. Import Web3 JS min from CDN (link in index.html)
+##### 7. Import Web3 JS min from CDN (link in index.html) - 
+
+<br>
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.3/web3.min.js" 
+        integrity="sha512-Ws+qbaGHSFw2Zc1e7XRpvW+kySrhmPLFYTyQ95mxAkss0sshj6ObdNP3HDWcwTs8zBJ60KpynKZywk0R8tG1GA==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer">
+</script>
+```
+
+<br>
+
+```html
+<!-- Map File -->
+https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.3/web3.min.js.map
+```
+
 ##### 8. Call methods on contract using the following sequence (Refer to flow in `js/` directory)
 
 > 8.1
